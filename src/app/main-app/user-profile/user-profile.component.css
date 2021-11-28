@@ -4,9 +4,15 @@
   height: 100%;
 }
 
-.create-user-request {
+.user-profile-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.create-user-request, .refresh-known-status {
   padding: 10px;
-  align-self: end;
 }
 
 .user-profile {

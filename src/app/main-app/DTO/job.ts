@@ -1,3 +1,5 @@
+import { KnownHostStatus } from './known-host-status';
+
 export interface Job {
   displayUrl: string;
   email: {
@@ -21,4 +23,5 @@ export interface Job {
     keyword: string;
     status: string;
   }
+  knownHostStatus: KnownHostStatus;
 }

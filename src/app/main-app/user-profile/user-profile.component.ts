@@ -29,6 +29,12 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  refreshStatus() {
+    this.userRequestService.refreshHostStatus().subscribe(() => {
+      this.requestListOfRequests();
+    });
+  }
+
   private requestListOfRequests() {
     this.userRequestService.getRequestList(this.user.email).subscribe((requests) => {
       requests

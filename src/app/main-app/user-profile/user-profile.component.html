@@ -1,11 +1,16 @@
 <div class="user-profile">
-  <button class="create-user-request" routerLink="../user-request">Create User Request</button>
+  <div class="user-profile-buttons">
+    <button class="refresh-known-status" (click)="refreshStatus()">Refresh Known Host List</button>
+    <button class="create-user-request" routerLink="../user-request">Create User Request</button>
+  </div>
   <div class="request-list">
     <div class="request-item" *ngFor="let request of requests">
       <h4 class="request-header">User Request: keyword = {{request.keyword}}, status - {{request.status}}</h4>
       <div class="user-requests" *ngIf="request.jobs && request.jobs.length; else NoJobs">
         <div class="user-request" *ngFor="let job of request.jobs">
-          <div class="request-host-status">Status: {{job.siteStatus}}</div>
+          <div class="request-host-status">
+            <div class="request-known-host-status">Status: {{job.knownHostStatus.status}}</div>
+          </div>
           <div class="request-job">
             <div class="request-name">Name: {{job.name}}}</div>
             <div class="request-name">URL: {{job.displayUrl}}}</div>
