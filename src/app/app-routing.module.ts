@@ -6,6 +6,7 @@ import {SignInComponent} from "./login/sign-in/sign-in.component";
 import {SignUpComponent} from "./login/sign-up/sign-up.component";
 import {SendEmailComponent} from "./main-app/send-email/send-email.component";
 import {UserRequestComponent} from "./main-app/user-request/user-request.component";
+import {UserProfileComponent} from "./main-app/user-profile/user-profile.component";
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: 'user-request',
         component: UserRequestComponent
+      },
+      {
+        path: 'user-profile',
+        component: UserProfileComponent
       },
     ]},
   {path: '**', redirectTo: '/login/sign-in', pathMatch: 'full'}

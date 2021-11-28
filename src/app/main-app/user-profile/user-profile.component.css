@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.create-user-request {
+  padding: 10px;
+  align-self: end;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin: 20px;
+}
+
+.request-list {
+  width: 100%;
+}
+
+.request-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid darkgray;
+  padding: 20px;
+}
+
+.user-request {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-request > *, request-job > * {
+  padding: 10px;
+  border: 1px solid darkgray;
+}
+
+.request-host-status, .request-site-status {
+  width: 10%;
+}
+
+.request-job {
+  width: 75%;
+}
+

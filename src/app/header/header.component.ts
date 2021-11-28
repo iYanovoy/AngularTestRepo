@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserStorageService} from "../main-app/services/user-storage.service";
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   email: string = '';
 
-  constructor() { }
+  constructor(private userStorageService: UserStorageService) { }
 
   ngOnInit(): void {
+    const user = this.userStorageService.getUserInfo();
+
+    if(user) {
+      this.email = user.email;
+    }
   }
 
 }

@@ -1,0 +1,32 @@
+<div class="user-profile">
+  <button class="create-user-request" routerLink="../user-request">Create User Request</button>
+  <div class="request-list">
+    <div class="request-item" *ngFor="let request of requests">
+      <h4 class="request-header">User Request: keyword = {{request.keyword}}, status - {{request.status}}</h4>
+      <div class="user-requests" *ngIf="request.jobs && request.jobs.length; else NoJobs">
+        <div class="user-request" *ngFor="let job of request.jobs">
+          <div class="request-host-status">Status: {{job.siteStatus}}</div>
+          <div class="request-job">
+            <div class="request-name">Name: {{job.name}}}</div>
+            <div class="request-name">URL: {{job.displayUrl}}}</div>
+            <div class="request-name">Snippet: {{job.snippet}}}</div>
+            <div class="request-name">Site Status: {{job.displayUrl}}}</div>
+            <div class="request-name">Email Status: {{job.email.status}}}</div>
+          </div>
+          <div class="request-site-status">
+            <button mat-button [matMenuTriggerFor]="menu">Status: {{job.siteStatus}}</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="changeStatus('DANGER', job.id)">DANGER</button>
+              <button mat-menu-item (click)="changeStatus('GREEN', job.id)">GREEN</button>
+              <button mat-menu-item (click)="changeStatus('NEUTRAL', job.id)">NEUTRAL</button>
+            </mat-menu>
+          </div>
+          <div class="request-send-email">
+            <button class="request-send-email-button" [routerLink]="['../send-email', {jobId: job.id}]">Send Email</button>
+          </div>
+        </div>
+      </div>
+      <ng-template class="user-requests-empty" #NoJobs>No Jobs</ng-template>
+    </div>
+  </div>
+</div>

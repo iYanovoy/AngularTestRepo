@@ -1,12 +1,13 @@
 <div class="sign-in-form">
   <div class="input-field">
     <div class="email">Email:</div>
-    <input class="email-input" type="email" [value]="email">
+    <input class="email-input" type="email" [formControl]="email">
   </div>
   <div class="input-field">
     <div class="password">Password:</div>
-    <input class="password-input" type="password" [value]="password">
+    <input class="password-input" type="password" [formControl]="password">
   </div>
   <a class="login-button" routerLink="../sign-up">I want to create account</a>
-  <button class="sign-up-button" routerLink="../../main-app/user-request">Sign In</button>
+  <button class="sign-up-button" (click)="login()" >Sign In</button>
+  <span class="error-block">{{error}}</span>
 </div>
