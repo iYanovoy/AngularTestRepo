@@ -19,13 +19,11 @@ export class SignInComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login({email: this.email.value, passHesh: this.password.value}).subscribe((response) => {
-      // if (response) {
+    this.loginService.login({email: this.email.value, passHesh: this.password.value}).subscribe(() => {
         this.router.navigate(['../../main-app/user-profile']);
-      // }
     },
-      (error) =>{
-        this.error = error;
+      ({error}) => {
+        this.error = error.message;
       })
   }
 }

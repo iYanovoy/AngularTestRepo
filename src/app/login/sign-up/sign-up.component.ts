@@ -27,12 +27,10 @@ export class SignUpComponent implements OnInit {
       userName: this.userName.value,
     })
       .subscribe((response) => {
-        if (response) {
           this.router.navigate(['../../main-app/user-profile']);
-        }
       },
-      (error) =>{
-        this.error = error;
+      ({error}) =>{
+        this.error = error.message;
       })
   }
 

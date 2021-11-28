@@ -33,7 +33,7 @@ export class SendEmailComponent implements OnInit {
 
   sendEmail() {
     this.userRequestService.sendEmail(this.email).subscribe(() => {
-      this.router.navigate(['../user-profile']);
+      this.router.navigate(['../main-app/user-profile']);
     });
   }
 }

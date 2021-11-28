@@ -22,7 +22,7 @@
             </mat-menu>
           </div>
           <div class="request-send-email">
-            <button class="request-send-email-button" [routerLink]="['../send-email', {jobId: job.id}]">Send Email</button>
+            <button class="request-send-email-button" [routerLink]="['../send-email']" [queryParams]="{jobId: job.id}">Send Email</button>
           </div>
         </div>
       </div>
